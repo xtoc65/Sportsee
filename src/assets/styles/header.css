@@ -1,0 +1,32 @@
+header {
+  background-color: black;
+}
+
+.nav_container {
+  padding: 20px 0em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* max-width: 1440px; */
+  margin: 0em 4em 0 2em;
+}
+.nav_container .images {
+  display: flex;
+}
+.nav_container .logo {
+  height: 50px;
+}
+.nav_container img {
+  height: 25px;
+}
+
+.nav_link {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+}
+.nav_link .active {
+  text-decoration: underline;
+}/*# sourceMappingURL=header.css.map */

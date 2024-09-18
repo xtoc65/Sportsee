@@ -1,0 +1,25 @@
+aside {
+  width: 8%;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  float: left;
+  background-color: black;
+  margin: -1.5em 2em 0 0;
+  height: 760px;
+}
+aside div {
+  padding: 8em 2em 0;
+}
+aside img {
+  height: 4em;
+  margin-top: 1em;
+}
+aside p {
+  color: white;
+  transform: rotate(270deg);
+  margin: 4em -6em 0 -5em;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 200px; /* 200% */
+}/*# sourceMappingURL=aside.css.map */
