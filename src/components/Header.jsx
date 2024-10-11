@@ -8,24 +8,22 @@ function Header() {
       <header>
         <nav className="nav_container">
           <div className='images'>
-            <NavLink to="/">
               <img src={Logo} alt="Logo SportSee" className='logo' />
               <img src={LogoNom} alt="Logo SportSee" />
-            </NavLink>
           </div>
-          <div>
-            <NavLink className="nav_link" to="/">
+          <div className='navigation'>
+            <p>
               Accueil
-            </NavLink>
-            <NavLink className="nav_link">
+            </p>
+            <p>
               Profil
-            </NavLink>
-            <NavLink className="nav_link">
+            </p>
+            <p>
               Réglage
-            </NavLink>
-            <NavLink className="nav_link">
+            </p>
+            <p>
               Communauté
-            </NavLink>
+            </p>
           </div>
         </nav>
       </header>

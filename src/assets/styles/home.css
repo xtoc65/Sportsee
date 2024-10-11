@@ -1,4 +1,59 @@
+@charset "UTF-8";
+/* Styles généraux */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #FAFAFA;
+  margin: 0;
+  padding: 0;
+}
+
+/* Conteneur principal */
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  margin-left: 80px; /* Décalage dû à la barre latérale */
+}
+main h1 {
+  font-size: 48px;
+  font-weight: 500;
+  color: #20253A;
+}
+main p {
+  font-size: 18px;
+  color: #74798C;
+  margin-top: 10px;
+}
+
+/* Mise en page principale */
 section {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  padding: 20px;
+}
+section article {
+  margin-right: 3em;
+}
+section article .header {
+  text-align: left;
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+section article .chart {
+  padding: 10px;
+}
+section article .chart.full-width {
+  width: 100%;
+}
+section article .charts-row {
+  display: flex;
+  margin-top: 2em;
+}
+section article .charts-row .chart {
+  flex: 1;
+}
+
+.information {
+  margin-top: 20px;
 }/*# sourceMappingURL=home.css.map */

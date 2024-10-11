@@ -1,4 +1,65 @@
-section{
+/* Styles généraux */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FAFAFA;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Conteneur principal */
+  main {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    padding: 40px;
+    margin-left: 80px; /* Décalage dû à la barre latérale */
+    h1 {
+        font-size: 48px;
+        font-weight: 500;
+        color: #20253A;
+    }
+    p {
+        font-size: 18px;
+        color: #74798C;
+        margin-top: 10px;
+      }
+}
+
+  
+/* Mise en page principale */
+
+section {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+
+  article {
+    margin-right: 3em;
+    .header {
+      text-align: left;
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .chart {
+      padding: 10px; // Espacement interne
+
+      &.full-width {
+        width: 100%; // Le graphique Barre prend toute la largeur
+      }
+    }
+
+    .charts-row {
+      display: flex; // Aligner les graphiques horizontalement
+      margin-top: 2em; // Espacement entre les graphiques
+
+      .chart {
+        flex: 1; // Chaque graphique prend une part égale de l'espace
+      }
+    }
+  }
+}
+
+.information {
+  margin-top: 20px; // Espacement au-dessus des informations
 }

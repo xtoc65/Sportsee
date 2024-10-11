@@ -1,0 +1,12 @@
+@charset "UTF-8";
+.custom-tooltip {
+  background-color: red;
+  padding: 10px; /* Espace autour du texte */
+  font-size: 12px; /* Taille de texte réduite */
+}
+.custom-tooltip .intro {
+  margin: 0; /* Enlever les marges */
+  color: white; /* Texte blanc */
+  text-align: center;
+  margin: 1em 0;
+}/*# sourceMappingURL=barre.css.map */
