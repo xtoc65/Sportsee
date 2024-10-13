@@ -12,12 +12,14 @@ header {
 }
 .nav_container .images {
   display: flex;
+  align-items: center;
 }
 .nav_container .logo {
   height: 50px;
 }
 .nav_container img {
   height: 25px;
+  margin: 5px;
 }
 .nav_container .navigation {
   display: flex;

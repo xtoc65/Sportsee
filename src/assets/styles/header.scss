@@ -10,12 +10,14 @@ header{
     margin: 0em 4em 0 2em;
     .images{
         display: flex;
+        align-items: center;
     }
     .logo{
         height: 50px;
     }
     img{
       height: 25px;
+      margin: 5px;
     }
     .navigation{
       display: flex;
