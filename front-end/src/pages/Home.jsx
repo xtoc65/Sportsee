@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import { useFetch } from "../services";
+import { getUrl } from "../utils";
 import Barre from "../components/Barre";
 import Courbe from "../components/Courbe";
 import RadarChart from "../components/RadarChart";
@@ -13,23 +15,21 @@ import "../assets/styles/home.css";
 function Home() {
   const { id } = useParams();
 
-  const [userActivityData, modifierUserActivity] = useState([]);
+  const userActivityData = useFetch({
+    url: `user/${id}/activity`,
+    resource: "activities",
+  });
+
   const [userAverageData, modifierUserAverage] = useState([]);
   const [userPerformanceData, modifierUserPerformance] = useState({});
-  const [userScoreData, modifierUserScore] = useState(null);
-  const [userInformationData, modifierUserInformation] = useState({});
-  const [userInfos, modifierUserInfos] = useState({});
+
+  const userData = useFetch({
+    url: `user/${id}`,
+    resource: "users",
+  });
 
   useEffect(() => {
-    fetch(`http://localhost:3000/user/${id}/activity`)
-      .then((response) => response.json())
-      .then((activity) => {
-        modifierUserActivity(activity.data.sessions);
-      });
-  }, [id]);
-
-  useEffect(() => {
-    fetch(`http://localhost:3000/user/${id}/average-sessions`)
+    fetch(getUrl(`user/${id}/average-sessions`))
       .then((response) => response.json())
       .then((average) => {
         modifierUserAverage(average.data.sessions);
@@ -37,20 +37,10 @@ function Home() {
   }, [id]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/user/${id}/performance`)
+    fetch(getUrl(`user/${id}/performance`))
       .then((response) => response.json())
       .then((performance) => {
         modifierUserPerformance(performance.data);
-      });
-  }, [id]);
-
-  useEffect(() => {
-    fetch(`http://localhost:3000/user/${id}`)
-      .then((response) => response.json())
-      .then((reponse) => {
-        modifierUserScore(reponse.data.score || reponse.data.todayScore);
-        modifierUserInformation(reponse.data.keyData);
-        modifierUserInfos(reponse.data.userInfos);
       });
   }, [id]);
 
@@ -59,7 +49,7 @@ function Home() {
       <Aside />
       <main>
         <div>
-          <h1>Bonjour {userInfos.firstName}</h1>
+          <h1>Bonjour {userData?.userInfos.firstName}</h1>
           <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </div>
         <section>
@@ -77,14 +67,16 @@ function Home() {
                 )}
               </div>
               <div className="chart">
-                <Cercle score={userScoreData} />
+                <Cercle score={userData?.score || userData?.todayScore} />
               </div>
             </div>
           </article>
-          <Information
-            className="information"
-            information={userInformationData}
-          />
+          {userData && (
+            <Information
+              className="information"
+              information={userData?.keyData}
+            />
+          )}
         </section>
       </main>
     </div>

@@ -44,9 +44,7 @@ function Barre({activities}) {
           <YAxis orientation="right"/>
           <Tooltip  content={<CustomTooltip />} cursor={{ fill: "rgba(200, 200, 200, 0.2)" }}/>
           <Legend verticalAlign="top" align="right"  wrapperStyle={{ padding: '10px' }} iconType="circle" />
-          {/* Barre pour le poids en kilogrammes */}
           <Bar dataKey="kilogram" fill="#282D30" name="Poids (kg)" radius={[10, 10, 0, 0]} barSize={15}/>
-          {/* Barre pour les calories brûlées */}
           <Bar dataKey="calories" fill="#E60000" name="Calories brûlées (KCal)" radius={[10, 10, 0, 0]} barSize={15}/>
         </BarChart>
       </ResponsiveContainer>

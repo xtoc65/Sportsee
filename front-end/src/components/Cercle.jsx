@@ -22,7 +22,7 @@ function Cercle({score}) {
         <Pie
           data={data}
           cx="50%"
-          cy="100%"          /* Centre le cercle en bas du conteneur */
+          cy="100%"          
           startAngle={180}   /* Commence à gauche */
           endAngle={0}       /* Termine à droite pour un demi-cercle */
           innerRadius={130}    /* Rayon interne */
